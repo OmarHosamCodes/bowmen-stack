@@ -209,3 +209,18 @@
 		letter-spacing: var(--tracking-normal);
 	}
 }
+
+*::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+	background: var(--color-sidebar);
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: var(--color-primary);
+	border-radius: 10px;
+	border: 2px solid var(--color-sidebar);
+}
