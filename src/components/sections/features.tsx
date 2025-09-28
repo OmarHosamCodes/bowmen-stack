@@ -1,41 +1,41 @@
-import { Database, Gauge, Lock, Shield, Users, Zap } from "lucide-react";
+import { Code, Database, Gauge, Palette, Shield, Zap } from "lucide-react";
 
 const features = [
 	{
 		icon: Shield,
-		title: "Secure Authentication",
+		title: "Complete Authentication",
 		description:
-			"Enterprise-grade security with bcrypt password hashing and session management.",
+			"Production-ready auth system with registration, login, sessions, and security best practices built-in.",
 	},
 	{
 		icon: Zap,
-		title: "Lightning Fast",
+		title: "Modern Tech Stack",
 		description:
-			"Built with Next.js 15, React Query for caching, and Redis for session storage.",
-	},
-	{
-		icon: Users,
-		title: "User Management",
-		description:
-			"Complete user registration, login, logout, and profile management system.",
+			"Next.js 15, TypeScript, Tailwind CSS, shadcn/ui, React Query, and Redis - all configured and ready to use.",
 	},
 	{
 		icon: Database,
-		title: "Scalable Database",
+		title: "Database Ready",
 		description:
-			"PostgreSQL with Drizzle ORM for type-safe database operations.",
+			"PostgreSQL with Drizzle ORM, migrations, and type-safe schema. No database setup headaches.",
 	},
 	{
-		icon: Lock,
-		title: "Privacy Focused",
+		icon: Code,
+		title: "Developer Experience",
 		description:
-			"Built-in privacy controls and GDPR-compliant user data handling.",
+			"ESLint, Prettier, TypeScript, hot reload, and comprehensive tooling for productive development.",
+	},
+	{
+		icon: Palette,
+		title: "Beautiful UI Components",
+		description:
+			"50+ pre-built components with shadcn/ui, dark/light mode, and responsive design system.",
 	},
 	{
 		icon: Gauge,
-		title: "Performance Optimized",
+		title: "Production Optimized",
 		description:
-			"Server-side rendering, caching strategies, and optimized bundle size.",
+			"Caching strategies, performance optimizations, and deployment-ready configuration included.",
 	},
 ];
 
@@ -45,11 +45,12 @@ export function Features() {
 			<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 				<div className="mx-auto max-w-2xl text-center">
 					<h2 className="font-bold text-3xl text-foreground tracking-tight sm:text-4xl">
-						Everything you need to build modern apps
+						Everything you need in one boilerplate
 					</h2>
 					<p className="mt-6 text-lg text-muted-foreground leading-8">
-						A complete authentication solution with all the modern features you
-						expect from a production-ready application.
+						Skip months of setup and configuration. Start with a
+						production-ready foundation that includes all the modern tools and
+						patterns you need.
 					</p>
 				</div>
 

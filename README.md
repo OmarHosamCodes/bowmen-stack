@@ -1,6 +1,12 @@
 # Bowmen Stack - Modern Full-Stack Web Application Boilerplate
 
-A modern, scalable authentication system built with Next.js 15, featuring credential-based authentication, React Query for state management, Redis for caching, and a beautiful UI powered by Tailwind CSS and shadcn/ui components.
+🚀 **The ultimate starter template for modern web applications**
+
+A production-ready boilerplate built with Next.js 15, featuring complete authentication system, database integration, caching, and a beautiful UI. Perfect for kickstarting your next SaaS, web app, or full-stack project with industry best practices built-in.
+
+[Live Demo](https://bowmen-stack.vercel.app/) | [GitHub Repo](https://github.com/OmarHosamCodes/bowmen-stack)
+
+![Bowmen Stack Screenshot](/assets/screenshot.png)
 
 ## ✨ Features
 

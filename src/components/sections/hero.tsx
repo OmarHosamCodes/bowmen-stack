@@ -1,9 +1,9 @@
 "use client";
 
-import { ArrowRight } from "lucide-react";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export function Hero() {
 	const { isAuthenticated, user } = useAuth();
@@ -16,37 +16,53 @@ export function Hero() {
 						<div className="mb-8">
 							<h1 className="font-bold text-4xl text-foreground tracking-tight sm:text-6xl">
 								Welcome back,{" "}
-								<span className="text-primary">{user?.name || "User"}</span>!
+								<span className="text-primary">
+									{user?.name || "Developer"}
+								</span>
+								!
 							</h1>
 							<p className="mt-6 text-lg text-muted-foreground leading-8">
-								You're successfully signed in to Bowmen Stack. Explore the
-								features and start building amazing things.
+								You're successfully authenticated in the Bowmen Stack
+								boilerplate. This demonstrates the complete authentication flow
+								you get out of the box.
 							</p>
 							<div className="mt-10 flex items-center justify-center gap-x-6">
 								<Button size="lg" className="text-base">
-									Get Started
+									Explore Features
 									<ArrowRight className="ml-2 h-4 w-4" />
 								</Button>
-								<Button variant="outline" size="lg" className="text-base">
-									Learn More
+								<Button
+									variant="outline"
+									size="lg"
+									className="text-base"
+									asChild
+								>
+									<Link
+										href="https://github.com/OmarHosamCodes/bowmen-stack"
+										target="_blank"
+									>
+										Fork on GitHub
+									</Link>
 								</Button>
 							</div>
 						</div>
 					) : (
 						<div>
 							<h1 className="font-bold text-4xl text-foreground tracking-tight sm:text-6xl">
-								Modern Authentication for{" "}
-								<span className="text-primary">Next.js</span>
+								Modern Full-Stack{" "}
+								<span className="text-primary">Web Application</span>{" "}
+								Boilerplate
 							</h1>
 							<p className="mt-6 text-lg text-muted-foreground leading-8">
-								A complete authentication solution with React Query, Redis
-								caching, and beautiful UI components. Built for scalability and
-								performance.
+								Skip the setup and start building. A production-ready Next.js
+								boilerplate with authentication, database, caching, and
+								beautiful UI components. Perfect for your next SaaS or web
+								application.
 							</p>
 							<div className="mt-10 flex items-center justify-center gap-x-6">
 								<Button asChild size="lg" className="text-base">
 									<Link href="/register">
-										Get Started
+										Try Demo
 										<ArrowRight className="ml-2 h-4 w-4" />
 									</Link>
 								</Button>
@@ -56,7 +72,12 @@ export function Hero() {
 									size="lg"
 									className="text-base"
 								>
-									<Link href="/login">Sign In</Link>
+									<Link
+										href="https://github.com/OmarHosamCodes/bowmen-stack"
+										target="_blank"
+									>
+										View on GitHub
+									</Link>
 								</Button>
 							</div>
 						</div>
