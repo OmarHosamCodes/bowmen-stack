@@ -1,9 +1,9 @@
 "use client";
 
-import Link from "next/link";
 import { UserMenu } from "@/components/auth/user-menu";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
+import Link from "next/link";
 
 export function Header() {
 	const { isAuthenticated, isLoading } = useAuth();
@@ -17,12 +17,12 @@ export function Header() {
 					</Link>
 				</div>
 				<div className="flex-1" />
-				<div className="flex items-center">
+				<div className="mx-4 flex items-center">
 					{!isLoading &&
 						(isAuthenticated ? (
 							<UserMenu />
 						) : (
-							<div className="mx-4 flex items-center gap-2">
+							<div className="flex items-center gap-2">
 								<Button variant="ghost" asChild>
 									<Link href="/login">Sign in</Link>
 								</Button>

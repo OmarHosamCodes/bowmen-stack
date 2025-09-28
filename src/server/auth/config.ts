@@ -1,8 +1,3 @@
-import { DrizzleAdapter } from "@auth/drizzle-adapter";
-import { eq } from "drizzle-orm";
-import type { DefaultSession, NextAuthConfig } from "next-auth";
-import CredentialsProvider from "next-auth/providers/credentials";
-import { z } from "zod";
 import { password } from "@/lib/password";
 import { cache } from "@/lib/redis";
 import { db } from "@/server/db";
@@ -12,6 +7,11 @@ import {
 	users,
 	verificationTokens,
 } from "@/server/db/schema";
+import { DrizzleAdapter } from "@auth/drizzle-adapter";
+import { eq } from "drizzle-orm";
+import type { DefaultSession, NextAuthConfig } from "next-auth";
+import CredentialsProvider from "next-auth/providers/credentials";
+import { z } from "zod";
 
 /**
  * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
@@ -35,7 +35,7 @@ declare module "next-auth" {
 }
 
 const loginSchema = z.object({
-	email: z.string().email("Invalid email address"),
+	email: z.email("Invalid email address"),
 	password: z.string().min(1, "Password is required"),
 });
 
@@ -52,6 +52,7 @@ export const authConfig = {
 				email: { label: "Email", type: "email" },
 				password: { label: "Password", type: "password" },
 			},
+
 			async authorize(credentials) {
 				try {
 					const { email, password: plainPassword } =
