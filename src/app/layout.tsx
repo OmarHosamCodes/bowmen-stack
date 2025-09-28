@@ -1,10 +1,8 @@
 import "@/styles/globals.css";
 
-import { ReactQueryProvider } from "@/providers/react-query-provider";
-import { ToasterProvider } from "@/providers/toaster-provider";
+import Providers from "@/components/shared/providers";
 import type { Metadata } from "next";
-import { SessionProvider } from "next-auth/react";
-import { Geist } from "next/font/google";
+import { Poppins } from "next/font/google";
 
 export const metadata: Metadata = {
 	title: "Bowmen Stack",
@@ -12,23 +10,19 @@ export const metadata: Metadata = {
 	icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
-const geist = Geist({
+const poppins = Poppins({
 	subsets: ["latin"],
-	variable: "--font-geist-sans",
+	weight: ["400", "500", "600", "700"],
+	variable: "--font-poppins",
 });
 
 export default function RootLayout({
 	children,
 }: Readonly<{ children: React.ReactNode }>) {
 	return (
-		<html lang="en" className={`${geist.variable}`}>
+		<html lang="en" className={`${poppins.variable}`}>
 			<body>
-				<SessionProvider>
-					<ReactQueryProvider>
-						{children}
-						<ToasterProvider />
-					</ReactQueryProvider>
-				</SessionProvider>
+				<Providers>{children}</Providers>
 			</body>
 		</html>
 	);
