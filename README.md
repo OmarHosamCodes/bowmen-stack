@@ -1,4 +1,4 @@
-# Bowmen Stack - Modern Full-Stack Authentication
+# Bowmen Stack - Modern Full-Stack Web Application Boilerplate
 
 A modern, scalable authentication system built with Next.js 15, featuring credential-based authentication, React Query for state management, Redis for caching, and a beautiful UI powered by Tailwind CSS and shadcn/ui components.
 
@@ -37,7 +37,7 @@ Make sure you have the following installed:
 ### 1. Clone and Install
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/OmarHosamCodes/bowmen-stack
 cd bowmen-stack
 bun install
 ```
@@ -68,7 +68,7 @@ NODE_ENV="development"
 
 Generate a secure AUTH_SECRET:
 ```bash
-npx auth secret
+bunx --bun auth secret
 ```
 
 ### 3. Start Services
@@ -147,7 +147,7 @@ The application uses a modern design system built on:
 - **Tailwind CSS**: Utility-first styling
 - **Lucide React**: Beautiful icons
 - **React Hook Form**: Performant forms with validation
-- **React Hot Toast**: Elegant notifications
+- **Zod**: Type-safe schema validation
 
 ## 📊 Caching Strategy
 
