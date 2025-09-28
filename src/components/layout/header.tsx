@@ -4,6 +4,7 @@ import { UserMenu } from "@/components/auth/user-menu";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
 import Link from "next/link";
+import { ThemeToggle } from "../shared/theme-toggle";
 
 export function Header() {
 	const { isAuthenticated, isLoading } = useAuth();
@@ -11,10 +12,11 @@ export function Header() {
 	return (
 		<header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
 			<div className="container flex h-16 max-w-screen-2xl items-center">
-				<div className="mx-4 flex">
+				<div className="mx-4 flex gap-4">
 					<Link href="/" className="mr-6 flex items-center space-x-2">
 						<span className="font-bold text-xl">Bowmen</span>
 					</Link>
+					<ThemeToggle />
 				</div>
 				<div className="flex-1" />
 				<div className="mx-4 flex items-center">
