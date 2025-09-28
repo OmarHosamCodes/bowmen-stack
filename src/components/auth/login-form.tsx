@@ -1,15 +1,15 @@
 "use client";
 
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Eye, EyeOff, Lock, Mail } from "lucide-react";
+import Link from "next/link";
+import { useId, useState } from "react";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useLogin } from "@/hooks/useAuth";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Eye, EyeOff, Lock, Mail } from "lucide-react";
-import Link from "next/link";
-import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
 
 const loginSchema = z.object({
 	email: z.email("Please enter a valid email address"),
@@ -20,6 +20,8 @@ type LoginFormData = z.infer<typeof loginSchema>;
 
 export function LoginForm() {
 	const [showPassword, setShowPassword] = useState(false);
+	const emailID = useId();
+	const passwordID = useId();
 	const login = useLogin();
 
 	const {
@@ -50,7 +52,7 @@ export function LoginForm() {
 						<Mail className="absolute top-3 left-3 h-4 w-4 text-muted-foreground" />
 						<Input
 							{...register("email")}
-							id="email"
+							id={emailID}
 							type="email"
 							placeholder="m@example.com"
 							className="pl-10"
@@ -68,7 +70,7 @@ export function LoginForm() {
 						<Lock className="absolute top-3 left-3 h-4 w-4 text-muted-foreground" />
 						<Input
 							{...register("password")}
-							id="password"
+							id={passwordID}
 							type={showPassword ? "text" : "password"}
 							placeholder="Enter your password"
 							className="pr-10 pl-10"

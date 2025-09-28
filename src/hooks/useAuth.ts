@@ -1,8 +1,8 @@
 "use client";
 
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { signIn, signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { signIn, signOut, useSession } from "next-auth/react";
 import { toast } from "sonner";
 
 // Types

@@ -1,8 +1,8 @@
 import "@/styles/globals.css";
 
-import Providers from "@/components/shared/providers";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+import Providers from "@/components/shared/providers";
 
 export const metadata: Metadata = {
 	title: "Bowmen Stack",

@@ -1,10 +1,10 @@
-import { password } from "@/lib/password";
-import { db } from "@/server/db";
-import { users } from "@/server/db/schema";
 import { eq } from "drizzle-orm";
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 import { z } from "zod";
+import { password } from "@/lib/password";
+import { db } from "@/server/db";
+import { users } from "@/server/db/schema";
 
 const registerSchema = z.object({
 	name: z.string().min(2, "Name must be at least 2 characters"),

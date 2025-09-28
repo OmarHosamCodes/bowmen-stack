@@ -1,9 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import { UserMenu } from "@/components/auth/user-menu";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
-import Link from "next/link";
 
 export function Header() {
 	const { isAuthenticated, isLoading } = useAuth();
