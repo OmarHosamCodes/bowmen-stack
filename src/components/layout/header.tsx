@@ -3,23 +3,27 @@
 import { UserMenu } from "@/components/auth/user-menu";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
+import Image from "next/image";
 import Link from "next/link";
 import { ThemeToggle } from "../shared/theme-toggle";
-
 export function Header() {
 	const { isAuthenticated, isLoading } = useAuth();
 
 	return (
 		<header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-			<div className="container flex h-16 max-w-screen-2xl items-center">
-				<div className="mx-4 flex gap-4">
-					<Link href="/" className="mr-6 flex items-center space-x-2">
-						<span className="font-bold text-xl">Bowmen</span>
-					</Link>
+			<div className="container flex h-16 items-center justify-between gap-4">
+				<Link href="/" className="flex items-center gap-3">
+					<Image
+						src="/logo-nobg.png"
+						className="h-12 w-auto object-contain invert dark:invert-0"
+						alt="Logo"
+						width={128}
+						height={128}
+						priority
+					/>
+				</Link>
+				<div className="flex items-center gap-4">
 					<ThemeToggle />
-				</div>
-				<div className="flex-1" />
-				<div className="mx-4 flex items-center">
 					{!isLoading &&
 						(isAuthenticated ? (
 							<UserMenu />

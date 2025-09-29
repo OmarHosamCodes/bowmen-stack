@@ -23,13 +23,13 @@ const features = [
 		icon: Code,
 		title: "Developer Experience",
 		description:
-			"ESLint, Prettier, TypeScript, hot reload, and comprehensive tooling for productive development.",
+			"BiomeJS, BunJS, TypeScript, hot reload, and comprehensive tooling for productive development.",
 	},
 	{
 		icon: Palette,
 		title: "Beautiful UI Components",
 		description:
-			"50+ pre-built components with shadcn/ui, dark/light mode, and responsive design system.",
+			"pre-built components with shadcn/ui, dark/light mode, and responsive design system.",
 	},
 	{
 		icon: Gauge,
